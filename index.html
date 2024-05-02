@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="favicon" href="psw.png">
+  </head>
+  <body>  
+<table width="750" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+  <td valign="top">
+       
+      <h1 style="text-align:center;"><u>Random Password Generator</u></h1>
+     <div id="error" class="error" style="display:none;">Please enter a password with a minimum of 4 characters and a maximum of 50 characters.</div>
+      <table class="table table-bordered">
+          <tr class="header2">
+              <td colspan="2"><h2>Generate password according to your choice</h2></td>
+          </tr>          
+      <tr>
+          <td width="40%"><span class="field_text">Password Length:</span></td>
+          <td><input name="ctl00$MainContent$txtPasswordLength" type="text" value="0" id="ctl00_MainContent_txtPasswordLength" class="input-custom medium" onkeyup="generate()" /></td>
+      </tr>     
+      <tr>
+          <td><span class="field_text">Lowercase Characters:</span></td>
+          <td><span onchange="generate()"><input id="ctl00_MainContent_chkIncludeLowerChar" type="checkbox" name="ctl00$MainContent$chkIncludeLowerChar" checked="checked" /><label for="ctl00_MainContent_chkIncludeLowerChar"> (e.g. abcdef)</label></span></td>
+      </tr>
+      <tr>
+          <td><span class="field_text">Uppercase Characters:</span></td>
+          <td><span onchange="generate()"><input id="ctl00_MainContent_chkIncludeUpperChar" type="checkbox" name="ctl00$MainContent$chkIncludeUpperChar" checked="checked" /><label for="ctl00_MainContent_chkIncludeUpperChar"> (e.g. ABCDEF)</label></span></td>
+      </tr>  
+      <tr>
+          <td><span class="field_text">Numbers:</span></td>
+          <td><span onchange="generate()"><input id="ctl00_MainContent_chkIncludeNumbers" type="checkbox" name="ctl00$MainContent$chkIncludeNumbers" checked="checked" /><label for="ctl00_MainContent_chkIncludeNumbers"> (e.g. 123456)</label></span></td>
+      </tr>  
+      <tr>
+          <td><span class="field_text">Symbols:</span></td>
+          <td><span onchange="generate()"><input id="ctl00_MainContent_chkIncludeSymbols" type="checkbox" name="ctl00$MainContent$chkIncludeSymbols" checked="checked" /><label for="ctl00_MainContent_chkIncludeSymbols"> (e.g. *@#+%)</label></span></td>
+      </tr>	            
+      
+      <tr>
+          <td><span class="field_text">Exclude Similar Characters:</span></td>
+          <td><span onchange="generate()"><input id="ctl00_MainContent_chkExcludeSimilar" type="checkbox" name="ctl00$MainContent$chkExcludeSimilar" /><label for="ctl00_MainContent_chkExcludeSimilar"> (e.g. o,0,i,l,1)</label></span></td>
+      </tr>
+      <tr>
+          <td><span class="field_text">Exclude Ambiguous Characters:</span></td>
+          <td><span onchange="generate()"><input id="ctl00_MainContent_chkExcludeAmbiguous" type="checkbox" name="ctl00$MainContent$chkExcludeAmbiguous" /><label for="ctl00_MainContent_chkExcludeAmbiguous"> (e.g. ~,;:.{}<>[]()/\'`)</label></span></td>
+      </tr>
+      <tr>
+          <td><span class="field_text">No Duplicate:</span></td>
+          <td><span onchange="generate()"><input id="ctl00_MainContent_chkNoDuplicate" type="checkbox" name="ctl00$MainContent$chkNoDuplicate" /><label for="ctl00_MainContent_chkNoDuplicate"> (no repeated characters)</label></span></td>
+      </tr>        
+        <tr>
+              <td></td>
+              <td><a onclick="generate()" class="button button-main">Generate Password</a></td>
+        </tr>    
+      </table>
+      <br><br>
+      <table class="table table-bordered" style="table-layout:fixed">
+        <tr>
+            <td width="40%"><span class="field_text">Random Password:</span></td> 
+            <td style="word-wrap: break-word"><input name="ctl00$MainContent$txtPassword" type="text" readonly="readonly" id="ctl00_MainContent_txtPassword" class="input-custom" onClick="this.setSelectionRange(0, this.value.length)" style="width:60%;" />
+            <a onclick="copyUrl()" class="button button-green short">Copy</a></td>
+        </tr>  
+    </table>
+    <script src="script.js"></script>
+    <footer>
+      <h3>Created by Akash with ❤️</h3>
+    </footer>
+  </body>
+</html>
